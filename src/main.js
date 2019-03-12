@@ -7,11 +7,17 @@ import VueHtml5Editor from "vue-html5-editor";
 import VueRouter from "vue-router";
 import store from "./vuex/store";
 import Vuex from "vuex";
-import colors from 'vuetify/es5/util/colors'
+
 import routes from "./routes";
 
+import { Input, Select, Option, Icon, Button } from 'element-ui';
 import {RESOURCE_UOLOAD_API} from "./api/url-constants";
 
+Vue.use(Select);
+Vue.use(Button);
+Vue.use(Option);
+Vue.use(Input);
+Vue.use(Icon);
 
 Vue.use(Vuetify);
 Vue.use(VueRouter);

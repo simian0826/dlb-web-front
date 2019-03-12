@@ -14,6 +14,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-polyfill": "^6.26.0",
+    "element-ui": "^2.6.1",
     "material-design-icons-iconfont": "^4.0.5",
     "superagent": "^3.8.2",
     "vue": "^2.5.13",

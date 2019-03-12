@@ -7,6 +7,7 @@
         <router-view></router-view>
       </v-layout>
     </v-container>
+    <PcFooter></PcFooter>
 
   </div>
 
@@ -15,8 +16,9 @@
 <script>
   import PcTopToolBar from "../components/PcTopToolBar";
   import Header from "../components/Header";
+  import PcFooter from "../components/PcFooter";
   export default {
-    components: { Header, PcTopToolBar }
+    components: { PcFooter, Header, PcTopToolBar }
   };
 </script>
 

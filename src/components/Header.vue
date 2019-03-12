@@ -1,40 +1,34 @@
 <template>
-  <v-container >
-    <v-layout row wrap class="py-3" style="height:160px;">
-      <v-flex md8 sm12 offset-md2 >
-        <v-layout row wrap fill-height>
-        <v-flex md4 class="hidden-md-and-down " fill-height>
-          <img src="../assets/imgs/test.png" width="100%" height="100%"/>
+
+    <v-layout row wrap class="py-3 " :style="{height:!$vuetify.breakpoint.smAndUp ? '140px' : '160px'}" :class="!$vuetify.breakpoint.smAndUp ? ' header_layout' : ''">
+      <v-flex sm8  offset-md2 >
+        <v-layout row wrap >
+        <v-flex sm4 class="hidden-xs-only " align-content-center>
+          <img src="../assets/imgs/logo.png" style="margin-top: 30px;" width="80%" />
         </v-flex>
-        <v-flex md4 sm12 fill-height>
-          <v-text-field
-            v-model="search"
-            outline
-            clearable
-            type="text"
-            style="height:60px;"
-          >
-            <template v-slot:prepend-inner>
-              <v-select
-                v-model="location"
-                :items="states"
-                dense
-                solo
-                menu-props="auto"
-                label="Select"
-                hide-details
-                single-line
-                style="width: 120px;"
-              ></v-select>
-            </template>
-          </v-text-field>
+
+        <v-flex sm4 xs12 class="header_search_container"   :class="!$vuetify.breakpoint.smAndUp ? 'mx-3 search_container_mobile' : ''">
+          <v-flex sm12 v-if="!$vuetify.breakpoint.smAndUp" style="margin-bottom: 10px;">
+            <v-icon color="white">room</v-icon>
+            
+          </v-flex>
+            <el-input placeholder="请输入内容" v-model="search" class="input-with-select" style="height:100%">
+              <el-select v-model="location" slot="prepend" placeholder="地区" style="width: 100px;">
+                <el-option v-for="item in states" :label="item.label" :value="item.value"></el-option>
+
+              </el-select>
+              <el-button slot="append" class="hidden-xs-only" style="background: #F44336;color:#fff;border-radius: 0;">搜索</el-button>
+              <i slot="append" class="el-icon-search" v-if="!$vuetify.breakpoint.smAndUp"></i>
+              <!--<div slot="append" class="hidden-md-and-down" style="background: #F44336;height: 100%;">搜索</div>-->
+            </el-input>
         </v-flex>
-        <v-flex md4 class="hidden-md-and-down" fill-height>
+        <v-flex sm4 class="hidden-xs-only">
+          <img src="../assets/imgs/tel.png" style="margin-top: 40px;margin-left: 80px;" />
         </v-flex>
         </v-layout>
       </v-flex>
     </v-layout>
-  </v-container>
+
 </template>
 
 <script>
@@ -45,26 +39,55 @@
         search:"",
         location:"",
         states: [
-          'Alabama', 'Alaska', 'American Samoa', 'Arizona',
-          'Arkansas', 'California', 'Colorado', 'Connecticut',
-          'Delaware', 'District of Columbia', 'Federated States of Micronesia',
-          'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
-          'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-          'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
-          'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
-          'Missouri', 'Montana', 'Nebraska', 'Nevada',
-          'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
-          'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
-          'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
-          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
-          'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
-          'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+          {
+            label:'重庆',
+            value:'1',
+          },
+          {
+            label:'四川',
+            value:'2',
+          },
+          {
+            label:'上海',
+            value:'3',
+          },
+          {
+            label:'北京',
+            value:'4',
+          },
         ]
       }
+  },
+  mounted(){
   }
   };
 </script>
 
-<style scoped>
+<style >
+.el-input__inner{
+  border: none !important;
+  padding-left: 10px;
+  background: white !important;
 
+}
+.el-input-group__append, .el-input-group__prepend{
+  border: none !important;
+  background: white !important;
+
+}
+.header_search_container {
+  border: 2px solid #F44336;
+  height:44px;
+  margin-top: 40px;
+}
+
+.header_layout{
+  background: #F44336;
+}
+
+.search_container_mobile{
+  margin-top: 30px;
+
+}
 </style>
+

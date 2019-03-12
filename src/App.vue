@@ -1,14 +1,12 @@
 
 
 <template>
-	<div id="app">
-		<v-app>
+	<div id="app" >
+
 			<v-content>
-
-					<router-view></router-view>
-
+				<router-view></router-view>
 			</v-content>
-		</v-app>
+
 
 	</div>
 </template>
@@ -22,6 +20,10 @@ export default {
 
 	},
 	mounted() {
+		let vm = this;
+    if (vm.$vuetify.breakpoint.smOnly){
+      document.body.style.minWidth = '1264px'
+    }
 
 
 	},
