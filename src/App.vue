@@ -2,12 +2,12 @@
 
 <template>
 	<div id="app" >
-
+		<v-app>
 			<v-content>
 				<router-view></router-view>
 			</v-content>
 
-
+		</v-app>
 	</div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
 	mounted() {
 		let vm = this;
     if (vm.$vuetify.breakpoint.smOnly){
-      document.body.style.minWidth = '1264px'
+      document.body.style.minWidth = '1300px'
     }
 
 
@@ -59,6 +59,7 @@ html,body {
 
 a{
 	text-decoration: none;
+	color: inherit;
 }
 
 /* Large Devices, Wide Screens */

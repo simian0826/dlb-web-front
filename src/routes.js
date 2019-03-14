@@ -1,5 +1,6 @@
 import NotFound from './views/404.vue'
 import BaseContainer from './layout/BaseContainer.vue'
+import Home from './views/home/Home.vue'
 
 import {
   LOGIN,
@@ -9,7 +10,14 @@ let routes = [
     {
       path: '/',
       component: BaseContainer,
-      name: '首页',
+      name: '',
+      children:[
+        {
+          path: '/',
+          component: Home,
+          name: '首页',
+        },
+      ]
     },
 
     {

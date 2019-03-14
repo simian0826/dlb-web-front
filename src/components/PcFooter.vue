@@ -74,10 +74,63 @@
 
       </v-layout>
       <v-flex sm12 style="border-bottom: 1px solid #1a1a1a;box-shadow: 0px 0px 0.1px #f1f1f1;">
-
       </v-flex>
+      <v-layout row wrap class="footer_center_container">
+        <v-flex sm8 >
+          <v-layout row wrap>
+            <v-flex sm8>
+              <v-layout row wrap>
+                <v-flex sm4 >
+                  <div class="footer_center_item_title">关于我们</div>
+                  <a href="#" class="footer_center_item">公司介绍</a><br>
+                  <a href="#" class="footer_center_item">联系我们</a>
+                </v-flex>
+                <v-flex sm4 >
+                  <div class="footer_center_item_title">用户指南</div>
+                  <a href="#" class="footer_center_item">免责声明</a><br>
+                  <a href="#" class="footer_center_item">争议解决</a><br>
+                  <a href="#" class="footer_center_item">平台规则</a><br>
+                  <a href="#" class="footer_center_item">版权声明</a>
+                </v-flex>
+                <v-flex sm4 >
+                  <div class="footer_center_item_title">帮助中心</div>
+                  <a href="#" class="footer_center_item">常见问题</a><br>
+                  <a href="#" class="footer_center_item">文档下载</a><br>
+                  <a href="#" class="footer_center_item">招商必看</a><br>
+                  <a href="#" class="footer_center_item">采购必看</a>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <v-flex sm4 >
+              <div class="footer_center_item_title">服务与支持</div><br>
+              <div class="footer_center_item">服务热线：17316789980</div><br>
+              <div class="footer_center_item">服务时间：9:00-18:00</div><br>
+              <div class="footer_center_item">服务邮箱：59455428@qq.com</div><br>
+              <div class="footer_center_item">地址：重庆市九龙坡区华宇·时代星都6号楼3-13</div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+        <v-flex sm3 offset-sm1>
+          <v-layout row wrap>
+            <v-flex sm5 offset-sm1 class="footer_center_qrcode">
+              <img src="../assets/imgs/official_account.jpg" width="100%"/>
+              <div class="mt-2">公众号</div>
+            </v-flex>
+            <v-flex sm5 offset-sm1 class="footer_center_qrcode">
+              <img src="../assets/imgs/miniprogram.jpg" width="100%"/>
+              <div class="mt-2">小程序</div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+
     </v-flex>
+    <v-flex sm12 class="footer_bottom_container">
+        Copyright © 2019 版权所有 重庆庆渝科技有限公司
+    </v-flex>
+
   </v-layout>
+
 </template>
 
 <script>
@@ -105,4 +158,33 @@
   font-size:12px;
 }
 
+.footer_center_container{
+  padding: 44px 0 64px 0;
+}
+.footer_center_item_title{
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  letter-spacing:2px;
+  margin-bottom: 20px;
+}
+
+.footer_center_item{
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 18px;
+  display: inline-block;
+}
+.footer_center_qrcode{
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+.footer_bottom_container{
+  padding: 27px;
+  background: #2b2b2b;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
 </style>

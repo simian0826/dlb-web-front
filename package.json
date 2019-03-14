@@ -17,6 +17,7 @@
     "element-ui": "^2.6.1",
     "material-design-icons-iconfont": "^4.0.5",
     "superagent": "^3.8.2",
+    "swiper": "^4.5.0",
     "vue": "^2.5.13",
     "vue-html5-editor": "^1.1.1",
     "vue-i18n": "^8.6.0",
