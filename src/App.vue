@@ -2,7 +2,7 @@
 
 <template>
 	<div id="app" >
-		<v-app>
+		<v-app style="background: #f0f3ef">
 			<v-content>
 				<router-view></router-view>
 			</v-content>

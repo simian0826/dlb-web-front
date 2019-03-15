@@ -42,6 +42,7 @@
                 </v-layout>
               </v-flex>
               <v-flex sm6 class="shopping_menu_foryou_item pt-3 pb-1"  >
+
                 <img src="../../assets/imgs/xunjia.png"/>
                 <div>为您询价</div>
               </v-flex>
@@ -58,8 +59,14 @@
                 <div>为您砍价</div>
               </v-flex>
               <v-flex sm6 class="shopping_menu_safe_item"  >
-                <img src="../../assets/imgs/safe1.png" class="shopping_menu_safe_icon"/>
-                平台保障
+                <v-layout row wrap>
+                  <v-flex lg-6 xl-6 style="text-align: center">
+                    <img src="../../assets/imgs/safe1.png" class="shopping_menu_safe_icon"/>
+                  </v-flex>
+                  <v-flex lg-6 xl-6 style="text-align: left">
+                    平台保障
+                  </v-flex>
+                </v-layout>
               </v-flex>
               <v-flex sm6 class="shopping_menu_safe_item "  >
                 <img src="../../assets/imgs/safe2.png" class="shopping_menu_safe_icon"/>
@@ -82,12 +89,111 @@
 
       </v-layout>
     </v-flex><!-- menu container -->
-    <v-flex sm8 offset-sm2 class="my-3">
+    <v-flex sm8 offset-sm2 class="my-3" v-if="$vuetify.breakpoint.smAndUp">
       <v-layout row wrap>
-        <v-flex sm4>【平台动态】双十一就是一盘大棋，看懂者寥寥无几！（深度）</v-flex>
-        <v-flex sm4>【平台动态】双十一就是一盘大棋，看懂者寥寥无几！（深度）</v-flex>
-        <v-flex sm4>【平台动态】双十一就是一盘大棋，看懂者寥寥无几！（深度）</v-flex>
+        <v-flex sm4>
+          <v-carousel
+            hide-delimiters
+            height="24px"
+            hide-controls
+            style="box-shadow: none"
+            vertical
+            cycle
+          >
+            <v-carousel-item
+              v-for="item in industryNews"
+
+            >
+              <v-icon size="20" color="red">volume_down</v-icon><span class="red--text">【行业动态】</span>{{item}}
+            </v-carousel-item>
+          </v-carousel>
+
+        </v-flex>
+        <v-flex sm4>
+          <v-carousel
+            hide-delimiters
+            height="24px"
+            hide-controls
+            style="box-shadow: none"
+            vertical
+            cycle
+          >
+            <v-carousel-item
+              v-for="item in notifications"
+            >
+              <v-icon size="20" color="red">volume_down</v-icon><span class="red--text">【平台公告】</span>{{item}}
+            </v-carousel-item>
+          </v-carousel>
+        </v-flex>
+        <v-flex sm4>
+          <v-carousel
+            hide-delimiters
+            height="24px"
+            hide-controls
+            style="box-shadow: none"
+            vertical
+            cycle
+          >
+            <v-carousel-item
+              v-for="item in programInfo"
+            >
+              <v-icon size="20" color="red">volume_down</v-icon><span class="red--text">【项目动态】</span>{{item}}
+            </v-carousel-item>
+          </v-carousel>
+        </v-flex>
+
       </v-layout>
+    </v-flex>
+    <v-flex sm8 offset-sm2 class="my-3" v-if="$vuetify.breakpoint.smAndUp">
+
+      <el-row  style="height: 60px;" >
+        <el-col :sm="8" class="red">
+          <el-row type="flex" justify="start">
+            <el-col :sm="23" class="white pa4" style="height: 60px;">
+
+            </el-col>
+          </el-row>
+        </el-col>
+        <el-col :sm="8" class="red">
+          <el-row type="flex" justify="center">
+            <el-col :sm="23" class="white pa4" style="height: 60px;">
+
+            </el-col>
+          </el-row>
+        </el-col>
+        <el-col :sm="8" class="red">
+          <el-row type="flex" justify="end">
+            <el-col :sm="23" class="white pa4" style="height: 60px;">
+
+            </el-col>
+          </el-row>
+        </el-col>
+      </el-row>
+
+        <!--<v-layout wrap row >-->
+          <!--<v-flex sm4 >-->
+            <!--<v-layout wrap row justify-start>-->
+              <!--<v-flex sm11 class="white pa-4">-->
+              <!--</v-flex>-->
+            <!--</v-layout>-->
+          <!--</v-flex>-->
+          <!--<v-flex sm4 >-->
+            <!--<v-layout wrap row justify-center>-->
+              <!--<v-flex sm11 class="white pa-4">-->
+              <!--</v-flex>-->
+            <!--</v-layout>-->
+          <!--</v-flex>-->
+
+          <!--<v-flex sm4 >-->
+
+            <!--<v-layout wrap row justify-end>-->
+              <!--<v-flex sm11 class="white pa-4">-->
+
+              <!--</v-flex>-->
+            <!--</v-layout>-->
+          <!--</v-flex>-->
+
+        <!--</v-layout>-->
     </v-flex>
 
     <v-flex sm12 v-if="!$vuetify.breakpoint.smAndUp">
@@ -155,10 +261,33 @@
   }
   .category_container{
     z-index: 2;
+    overflow-y: scroll;
+  }
+  .category_container::-webkit-scrollbar
+  {
+    width:6px;
+    height:16px;
+    background-color:#D62929;
+  }
+  /*定义滚动条轨道
+   内阴影+圆角*/
+  .category_container::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+
+    background-color:#aaa;
+  }
+  /*定义滑块
+   内阴影+圆角*/
+  .category_container::-webkit-scrollbar-thumb
+  {
+    border-radius:3px;
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+    background-color:#555;
   }
   .category_title{
     font-size: 16px;
-    padding-bottom: 4px
+    padding-bottom: 3px
   }
   .category_icon{
     margin-top: 4px;
@@ -204,7 +333,7 @@
   .shopping_menu_safe_icon{
     position: relative;
     top: 4px;
-    margin-right: 6px
+    /*margin-right: 6px*/
   }
   .shopping_menu_footer{
     color: #999;
@@ -216,6 +345,7 @@
     font-size: 16px;
     background: white;
     font-family: '微软雅黑';
+    line-height: 25px;
   }
 
 

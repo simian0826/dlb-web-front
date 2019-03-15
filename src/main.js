@@ -10,13 +10,23 @@ import Vuex from "vuex";
 
 import routes from "./routes";
 
-import { Input, Select, Option, Icon, Button } from 'element-ui';
+import {
+  Input,
+  Select,
+  Option,
+  Icon,
+  Button,
+  Row,
+  Col,
+} from 'element-ui';
 import {RESOURCE_UOLOAD_API} from "./api/url-constants";
 
 Vue.use(Select);
 Vue.use(Button);
 Vue.use(Option);
 Vue.use(Input);
+Vue.use(Row);
+Vue.use(Col);
 Vue.use(Icon);
 
 Vue.use(Vuetify);
