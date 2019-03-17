@@ -156,6 +156,145 @@ export default {
           ]
         },
       ],
+      companyDecorationRecommend:[
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: true
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: true
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+      ],
+      familyDecorationRecommend:[
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: true
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: true
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          brand:"办公家具",
+          isVip: false
+        },
+      ],
+      projectRecommend:[
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: true
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: false
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: true
+        },
+        {
+          logo:"/static/imgs/jclogo.jpg",
+          name:"恒宏办公整装",
+          category:"恒宏",
+          type:"办公家具",
+          isVip: false
+        },
+      ],
       industryNews:[
         "如果你决定手动选择特性，在操作提示的最后你可以选择将已选项保存为一个将来可复用的 preset。我们会在下一个章节讨论 preset 和插件。",
         "被保存的 preset 将会存在用户的 home 目录下一个名为 .vuerc 的 JSON 文件里。如果你想要修改被保存的 preset / 选项，可以编辑这个文件。",

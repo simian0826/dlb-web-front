@@ -2,12 +2,10 @@
 
 <template>
 	<div id="app" >
-		<v-app style="background: #f0f3ef">
 			<v-content>
 				<router-view></router-view>
 			</v-content>
 
-		</v-app>
 	</div>
 </template>
 
@@ -21,9 +19,10 @@ export default {
 	},
 	mounted() {
 		let vm = this;
-    if (vm.$vuetify.breakpoint.smOnly){
-      document.body.style.minWidth = '1300px'
-    }
+		console.log(vm.$vuetify.breakpoint)
+		if (vm.$vuetify.breakpoint.smAndUp){
+		  document.body.style.minWidth = '1300px'
+		}
 
 
 	},
@@ -55,6 +54,7 @@ html,body {
 	top: 0px;
 	bottom: 0px;
 	width: 100%;
+	background: #f0f3ef;
 }
 
 a{
