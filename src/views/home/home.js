@@ -156,6 +156,7 @@ export default {
           ]
         },
       ],
+      recommendTitles:['家装商家', '公装商家', '项目推荐'],
       companyDecorationRecommend:[
         {
           logo:"/static/imgs/jclogo.jpg",
@@ -311,7 +312,7 @@ export default {
         "在项目创建的过程中，你也会被提示选择喜欢的包管理器或使用淘宝 npm 镜像源以更快地安装依赖。这些选择也将会存入 ~/.vuerc。",
       ],
       longText: 'webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。常见结合属性display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。',
-      count:10,
+      infoTitles:['询价信息', '项目合作信息'],
       activity:[
         {
           title:'1在一个块元素显示的文本的行数为了实现该',
@@ -360,6 +361,11 @@ export default {
         },
 
       ],
+      newsTabTitles:['平台动态','行业资讯'],
+      tabs:{
+        headers:['供应商客户', '设计施工单位', '开发商及企事业单位',],
+        items:['供应商客户', '设计施工单位', '开发商及企事业单位',],
+      }
     }
   },
   methods:{

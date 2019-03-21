@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import store from "./vuex/store";
+
 export default {
 	name: 'app',
 	components: {
@@ -19,13 +21,17 @@ export default {
 	},
 	mounted() {
 		let vm = this;
-		console.log(vm.$vuetify.breakpoint)
 		if (vm.$vuetify.breakpoint.smAndUp){
 		  document.body.style.minWidth = '1300px'
 		}
+		store.commit('INCREMENT', 10);
 
+    store.dispatch('incrementByNum', {num: 10});
 
-	},
+    store.dispatch('testA/methodA');
+    store.dispatch('testA/methodC', {num: 10});
+
+  },
 	updated() {
 	  //do something after updating vue instance
 

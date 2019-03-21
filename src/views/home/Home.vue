@@ -51,8 +51,8 @@
                 <div>为您砍价</div>
               </v-flex>
               <v-flex sm6 class="shopping_menu_foryou_item pt-3 pb-2"  >
-                <img src="../../assets/imgs/xunjia.png"/>
-                <div>为您询价</div>
+                <img src="../../assets/imgs/daigou.png"/>
+                <div>为您代购</div>
               </v-flex>
               <v-flex sm6 class="shopping_menu_foryou_item pt-3 pb-2" >
                 <img src="../../assets/imgs/kanjia.png"/>
@@ -158,7 +158,6 @@
       </v-layout>
     </v-flex>
     <v-flex sm8 offset-sm2 class="my-3" v-if="$vuetify.breakpoint.smAndUp">
-
       <el-row type="flex">
         <el-col :sm="8" class="white py-4 px-3 mr-2">
             <el-row style="border-bottom: 1px solid #eee;" class="pb-2">
@@ -240,8 +239,6 @@
 
         </el-col>
       </el-row>
-
-
     </v-flex>
 
     <v-flex sm8 offset-sm2 class="my-2" v-if="$vuetify.breakpoint.smAndUp">
@@ -340,6 +337,7 @@
           </el-row>
         </el-col>
       </el-row>
+      <!--砍价活动-->
       <el-col :span="24"  class="mt-4" >
         <el-row type="flex" style="flex-wrap:wrap">
           <el-col :span="24" class="pa-4 white">
@@ -377,26 +375,50 @@
           </el-col>
         </el-row>
       </el-col>
+      <!--平台活动 、行业热点、-->
       <el-col :span="24" class="mt-4">
         <el-row type="flex">
-          <el-col :span="12" class="pa-4 white mr-2">
-            <el-row>
+          <el-col :span="12" class="pr-2  ">
+            <el-row class="pa-4 white " style="height:100%">
               <el-col :span="24" class=" mb-4 info_block_header">
                 <div class="pb-2 pr-3 info_block_header_title red--text" >平台动态</div>
                 <a href="#" class="info_block_header_more" >更多 + </a>
               </el-col>
               <el-col :span="24">
-                <el-row :gutter="16">
-                  <el-col :span="24" v-for="i in 4"  tag="a" href="#" >
+                <el-row >
+                  <template v-for="(i,index) in 6">
+                    <el-col :span="24" v-if="index == 0" tag="a" href="#" class="news_first_item pb-3 mb-1" >
+                      <el-row type="flex">
+                        <el-col :span="6"><img src="../../assets/imgs/activite.png" width="100%" height="100%" /></el-col>
+                        <el-col :span="18" class="pl-2">
+                          <el-col :span="24" class="mb-1 news_first_item_title" >
+                            CSS white-space 属性
+                          </el-col>
+                          <el-col :span="24" class="my-1 news_first_item_content grey--text text--darken-1">
+                            webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。
+                          </el-col>
+                          <el-col :span="24" class="mt-2 news_first_item_date grey--text ">
+                            2019-06-19
+                          </el-col>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+                    <el-col :span="24" v-else class="news_item py-2">
+                      <el-row type="flex" align="middle">
+                        <el-col class="news_item_title grey--text text--darken-2" :span="20" tag="li"> webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。</el-col>
+                        <el-col :span="4"  class="news_item_date grey--text">2019-06-19</el-col>
+                      </el-row>
+                    </el-col>
 
-                  </el-col>
+                  </template>
+
                 </el-row>
 
               </el-col>
             </el-row>
           </el-col>
-          <el-col :span="12" class="pa-4 white ml-2">
-            <el-row>
+          <el-col :span="12" class="  pl-2">
+            <el-row class="pa-4 white" style="height:100%">
               <el-col :span="24" class=" mb-4 info_block_header">
                 <div class="pb-2 pr-3 info_block_header_title red--text" >行业热点</div>
                 <a href="#" class="info_block_header_more" >更多 + </a>
@@ -437,55 +459,476 @@
         </el-row>
       </el-col>
 
-    </v-flex>
+      <!--供应商、单位 tab-->
+      <el-col :span="24" class="mt-4">
+        <v-tabs
+          color="white"
+          slider-color="red"
+        >
+          <v-tab
+            v-ripple="{ class: `red--text` }"
+            v-for="(header, index) in tabs.headers"
+            :key="index"
+            class=" tab_header_item"
+          >
+            {{header}}
+          </v-tab>
 
-    <v-flex sm12 v-if="!$vuetify.breakpoint.smAndUp">
-      <v-layout row wrap class="text-xs-center white">
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav1.png" width="65%"/>
-          <div>家装材料</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav2.png" width="65%"/>
-          <div>公装材料</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav3.png" width="65%"/>
-          <div>装饰设计</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav4.png" width="65%"/>
-          <div>建筑材料</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav5.png" width="65%"/>
-          <div>园林景观</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav6.png" width="65%"/>
-          <div>机电设备</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav7.png" width="65%"/>
-          <div>项目信息</div>
-        </v-flex>
-        <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
-          <img src="../../assets/imgs/mobile/nav8.png" width="65%"/>
-          <div>关于我们</div>
-        </v-flex>
-      </v-layout><!-- m nav -->
+          <v-tab-item
+            v-for="item in tabs.items"
+            :key="index"
+            style="min-height: 400px;"
+          >
+            <el-col :span="24" class="white">
+              <el-row  type="flex" justify="start"  style="flex-wrap:wrap;border: 1px solid #eee">
+                <div v-for="i in 15" class="brand_block" >
+                  <a href="#">
+                    <img src="../../assets/imgs/jclogo.jpg" width="100%" height="100%">
+                  </a>
+                </div>
+              </el-row>
+            </el-col>
+          </v-tab-item>
+
+        </v-tabs>
+      </el-col>
 
     </v-flex>
-    <v-flex sm12 v-if="!$vuetify.breakpoint.smAndUp" style="margin-top: 20px;">
-      <div class="swiper-container" style="height:200px" >
-        <div class="swiper-wrapper">
-          <div v-for="item in items" class="swiper-slide"><img :src="item.src" width="100%" height="100%"/></div>
 
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+    <!--手机端-->
+    <v-flex xs12 v-if="!$vuetify.breakpoint.smAndUp">
+      <v-layout row wrap>
+        <v-flex xs12 >
+          <v-layout row wrap class="text-xs-center white">
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav1.png" width="65%"/>
+              <div>家装材料</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav2.png" width="65%"/>
+              <div>公装材料</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav3.png" width="65%"/>
+              <div>装饰设计</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav4.png" width="65%"/>
+              <div>建筑材料</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav5.png" width="65%"/>
+              <div>园林景观</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav6.png" width="65%"/>
+              <div>机电设备</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav7.png" width="65%"/>
+              <div>项目信息</div>
+            </v-flex>
+            <v-flex xs3 class="m_nav_item pt-3 pb-1 mb-3" >
+              <img src="../../assets/imgs/mobile/nav8.png" width="65%"/>
+              <div>关于我们</div>
+            </v-flex>
+          </v-layout><!-- m nav -->
 
-    </v-flex><!-- m swiper -->
+        </v-flex>
+        <v-flex xs12 class="mt-3">
+          <div class="swiper-container" style="height:200px" >
+            <div class="swiper-wrapper">
+              <div v-for="item in items" class="swiper-slide"><img :src="item.src" width="100%" height="100%"/></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </v-flex><!-- m swiper -->
+        <!--m 家装推荐。。 -->
+        <v-flex xs12 class="mt-3">
+          <v-tabs
+            centered
+            color="white"
+            slider-color="red"
+            grow
+          >
+            <v-tab
+              v-for="(item,index) in recommendTitles"
+              :key="index"
+              v-ripple="{ class: `red--text` }"
+            >
+              {{item}}
+            </v-tab>
+            <v-tab-item :key="1" style="min-height: 400px;">
+              <el-col :sm="8"  class="white px-3 ">
+                <el-col :xs="24" class="py-3 recommend_item_container" v-for="item in companyDecorationRecommend" tag="a" href="#" v-ripple="{ class: `red--text` }">
+                  <el-row >
+                    <el-col :span="9">
+                      <img :src="item.logo" style="border: 1px solid" width="90%" />
+                    </el-col>
+                    <el-col :span="15">
+                      <el-row>
+                        <el-col :span="24" class="mt-3 mb-2 recommend_item_title" :class="item.isVip ? 'red--text' : 'black--text'">{{item.name}}</el-col>
+                        <el-col :span="12" class="recommend_item_sub_title">材料分类 : <span class="black--text">{{item.category}}</span></el-col>
+                        <el-col :span="12" class="recommend_item_sub_title">主营品牌 : <span class="black--text">{{item.brand}}</span></el-col>
+                      </el-row>
+                    </el-col>
+                  </el-row>
+                </el-col>
+                <el-col :xs="24" class="py-3 text-xs-center">
+                  <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                </el-col>
+              </el-col>
+            </v-tab-item>
+            <v-tab-item :key="2" style="min-height: 400px;">
+              <el-col :sm="8"  class="white px-3 ">
+                <el-col :xs="24" class="py-3 recommend_item_container" v-for="item in companyDecorationRecommend" tag="a" href="#" v-ripple="{ class: `red--text` }">
+                  <el-row >
+                    <el-col :span="9">
+                      <img :src="item.logo" style="border: 1px solid" width="90%" />
+                    </el-col>
+                    <el-col :span="15">
+                      <el-row>
+                        <el-col :span="24" class="mt-3 mb-2 recommend_item_title" :class="item.isVip ? 'red--text' : 'black--text'">{{item.name}}</el-col>
+                        <el-col :span="12" class="recommend_item_sub_title">材料分类 : <span class="black--text">{{item.category}}</span></el-col>
+                        <el-col :span="12" class="recommend_item_sub_title">主营品牌 : <span class="black--text">{{item.brand}}</span></el-col>
+                      </el-row>
+                    </el-col>
+                  </el-row>
+                </el-col>
+                <el-col :xs="24" class="py-3 text-xs-center">
+                  <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                </el-col>
+              </el-col>
+            </v-tab-item>
+            <v-tab-item :key="3" style="min-height: 400px;">
+              <el-col :sm="8"  class="white px-3 ">
+                <el-col :xs="24" class="pb-3 pt-3 recommend_item_container" v-for="(item, i) in projectRecommend" tag="a" href="#" v-ripple="{ class: `red--text` }">
+                  <el-row >
+                    <el-col :span="3" class="pt-2" style="position: relative">
+                      <v-icon style="position: absolute" large
+                              :class="i == 0 ? 'red--text' : i == 1 ? 'orange--text' : i == 2 ? 'yellow--text'  :''">turned_in</v-icon>
+                      <span class="recommend_project_item_index">{{i + 1}}</span>
+                    </el-col>
+                    <el-col :span="21">
+                      <el-col :span="24" class="mt-2 mb-2 recommend_project_item_title" :class="item.isVip ? 'red--text' : 'black--text'">{{item.name}}</el-col>
+                      <el-col :span="24" class="recommend_project_item_sub_title" >{{item.type}} | {{item.category}}</el-col>
+                    </el-col>
+                  </el-row>
+                </el-col>
+                <el-col :xs="24" class="py-3 recommend_item_container text-xs-center"  >
+                  <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                </el-col>
+              </el-col>
+            </v-tab-item>
+          </v-tabs>
+        </v-flex>
+        <!--m 询价信息。。 -->
+        <v-flex xs12 class="mt-3" >
+          <v-tabs
+            centered
+            color="white"
+            slider-color="red"
+            grow
+          >
+            <v-tab
+              v-for="(item,index) in infoTitles"
+              :key="index"
+              v-ripple="{ class: `red--text` }"
+            >
+              {{item}}
+            </v-tab>
+            <v-tab-item :key="1" style="min-height: 400px">
+              <el-col :span="24" class="pa-2 white">
+                <el-row :gutter="10">
+                  <el-col :span="12" v-for="i in 4"  tag="a" href="#" >
+                    <div class="mb-2 pa-2 info_block_item" v-ripple="{ class: `red--text` }">
+                      <el-row class="info_block_item_header py-1" :gutter="0">
+                        <el-col :span="10" class="pt-1">
+                          <v-avatar
+                            :size="50"
+                            color="white lighten-4"
+                          >
+                            <img src="../../assets/imgs/avatar.jpeg" alt="avatar">
+                          </v-avatar>
+                        </el-col>
+                        <el-col :span="14">
+                          <div class="info_block_name pt-2 pb-2" >邓讯</div>
+                          <div class="info_block_date" >2019-01-24</div>
+                        </el-col>
+                      </el-row>
+                      <el-row :gutter="0">
+                        <el-col :span="24" class="my-2 info_block_content">
+                          <!--{{longText.length >= 65 ? longText.substring(0,65) + '...' : longText}}-->
+                          {{longText}}
+                        </el-col>
+
+                        <el-col :span="5" >
+                          <v-icon  small class="mr-1 info_block_icon">remove_red_eye</v-icon>
+                          <span class="info_block_icon_number" >243</span>
+                        </el-col>
+                        <el-col :span="5" :offset="14" v-ripple>
+                          <v-icon small class="mr-2 info_block_icon">favorite_border</v-icon>
+                          <span class="info_block_icon_number" >243</span>
+                        </el-col>
+                      </el-row>
+
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" class="py-3 text-xs-center">
+                    <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                  </el-col>
+                </el-row>
+
+              </el-col>
+            </v-tab-item>
+            <v-tab-item :key="2" style="min-height: 400px">
+              <el-col :span="24" class="pa-2 white">
+                <el-row :gutter="10">
+                  <el-col :span="12" v-for="i in 4"  tag="a" href="#" >
+                    <div class="mb-2 pa-2 info_block_item" v-ripple="{ class: `red--text` }">
+                      <el-row class="info_block_item_header py-1" :gutter="0">
+                        <el-col :span="10" class="pt-1">
+                          <v-avatar
+                            :size="50"
+                            color="white lighten-4"
+                          >
+                            <img src="../../assets/imgs/avatar.jpeg" alt="avatar">
+                          </v-avatar>
+                        </el-col>
+                        <el-col :span="14">
+                          <div class="info_block_name pt-2 pb-2" >邓讯</div>
+                          <div class="info_block_date" >2019-01-24</div>
+                        </el-col>
+                      </el-row>
+                      <el-row :gutter="0">
+                        <el-col :span="24" class="my-2 info_block_content">
+                          <!--{{longText.length >= 65 ? longText.substring(0,65) + '...' : longText}}-->
+                          {{longText}}
+                        </el-col>
+
+                        <el-col :span="5" >
+                          <v-icon  small class="mr-1 info_block_icon">remove_red_eye</v-icon>
+                          <span class="info_block_icon_number" >243</span>
+                        </el-col>
+                        <el-col :span="5" :offset="14" v-ripple>
+                          <v-icon small class="mr-2 info_block_icon">favorite_border</v-icon>
+                          <span class="info_block_icon_number" >243</span>
+                        </el-col>
+                      </el-row>
+
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" class="py-3 text-xs-center">
+                    <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                  </el-col>
+                </el-row>
+
+              </el-col>
+            </v-tab-item>
+          </v-tabs>
+        </v-flex>
+
+        <v-flex xs12 class="mt-3" >
+          <v-layout row wrap class="text-xs-center">
+            <v-flex sm3 class="shopping_menu_foryou_item py-4"  >
+              <img src="../../assets/imgs/xunjia.png"/>
+              <div style="font-size: 14px;" class="mt-2">为您询价</div>
+            </v-flex>
+            <v-flex sm3 class="shopping_menu_foryou_item py-4" >
+              <img src="../../assets/imgs/kanjia.png"/>
+              <div style="font-size: 14px;" class="mt-2">为您砍价</div>
+            </v-flex>
+            <v-flex sm3 class="shopping_menu_foryou_item py-4"  >
+              <img src="../../assets/imgs/daigou.png"/>
+              <div style="font-size: 14px;" class="mt-2">为您代购</div>
+            </v-flex>
+            <v-flex sm3 class="shopping_menu_foryou_item py-4" >
+              <img src="../../assets/imgs/kanjia.png"/>
+              <div style="font-size: 14px;" class="mt-2">为您砍价</div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+        <!--m 砍价活动-->
+        <v-flex xs12 class="mt-3">
+
+          <el-col :span="24"  class="mt-4" >
+            <el-row type="flex" style="flex-wrap:wrap">
+              <el-col :span="24" class="py-3 white">
+                <el-row >
+                  <el-col :span="24" class=" mb-3 info_block_header">
+                    <div class="pb-2 pr-3 px-3 info_block_header_title grey--text text--darken-3" >砍价活动</div>
+                  </el-col>
+                  <el-col :span="24" class="px-2">
+                    <el-row :gutter="16" type="flex" justify="start"  style="flex-wrap:wrap">
+                      <el-col :span="12" class="mb-3" v-for="item in activity">
+                        <el-row :gutter="0" class="pa-2 " style="border: 1px solid #e7e7e7;">
+                          <el-col :span="24" class="mb-1">
+                            <img src="../../assets/imgs/activite.png" width="100%" height="150px"/>
+                          </el-col>
+
+                          <el-col  class="activity_block_title mb-1" style="width: 100%">
+                            {{item.title}}
+                          </el-col>
+                          <el-col  :span="24" class="activity_block_field grey--text text--darken-2 my-1"  style="width: 100%">
+                            时间：{{item.date}}
+                          </el-col >
+                          <el-col  :span="24" class="activity_block_field grey--text text--darken-2 my-1"  style="width: 100%">
+                            地点：{{item.address}}
+                          </el-col >
+                        </el-row>
+
+                      </el-col>
+                      <el-col :xs="24" class="py-3 text-xs-center">
+                        <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                      </el-col>
+
+                    </el-row>
+
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+          </el-col>
+
+        </v-flex>
+
+        <v-flex xs12 class="mt-3" >
+          <v-tabs
+            centered
+            color="white"
+            slider-color="red"
+            grow
+          >
+            <v-tab
+              v-for="(item,index) in newsTabTitles"
+              :key="index"
+              v-ripple="{ class: `red--text` }"
+            >
+              {{item}}
+            </v-tab>
+            <v-tab-item :key="1" style="min-height: 400px">
+              <el-col :span="24" class="pa-2 white">
+                <el-col :span="24">
+                  <el-row >
+                    <template v-for="(i,index) in 6">
+                      <el-col :span="24" v-if="index == 0" tag="a" href="#" class="news_first_item pb-3 mb-1" >
+                        <el-row type="flex">
+                          <el-col :span="8"><img src="../../assets/imgs/activite.png" width="100%" height="100%" /></el-col>
+                          <el-col :span="16" class="pl-2">
+                            <el-col :span="24" class="mb-1 news_first_item_title" >
+                              CSS white-space 属性
+                            </el-col>
+                            <el-col :span="24" class="my-1 news_first_item_content grey--text text--darken-1">
+                              webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。
+                            </el-col>
+                            <el-col :span="24" class="mt-2 news_first_item_date grey--text ">
+                              2019-06-19
+                            </el-col>
+                          </el-col>
+                        </el-row>
+                      </el-col>
+                      <el-col :span="24" v-else class="news_item py-2">
+                        <el-row type="flex" align="middle">
+                          <el-col class="news_item_title grey--text text--darken-2" :span="24" > webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。</el-col>
+                        </el-row>
+                      </el-col>
+
+                    </template>
+                    <el-col :xs="24" class="py-3 text-xs-center">
+                      <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                    </el-col>
+                  </el-row>
+
+                </el-col>
+
+              </el-col>
+            </v-tab-item>
+            <v-tab-item :key="2" style="min-height: 400px">
+              <el-col :span="24" class="pa-2 white">
+                <el-col :span="24">
+                  <el-row >
+                    <template v-for="(i,index) in 6">
+                      <el-col :span="24" v-if="index == 0" tag="a" href="#" class="news_first_item pb-3 mb-1" >
+                        <el-row type="flex">
+                          <el-col :span="8"><img src="../../assets/imgs/activite.png" width="100%" height="100%" /></el-col>
+                          <el-col :span="16" class="pl-2">
+                            <el-col :span="24" class="mb-1 news_first_item_title" >
+                              CSS white-space 属性
+                            </el-col>
+                            <el-col :span="24" class="my-1 news_first_item_content grey--text text--darken-1">
+                              webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。
+                            </el-col>
+                            <el-col :span="24" class="mt-2 news_first_item_date grey--text ">
+                              2019-06-19
+                            </el-col>
+                          </el-col>
+                        </el-row>
+                      </el-col>
+                      <el-col :span="24" v-else class="news_item py-2">
+                        <el-row type="flex" align="middle">
+                          <el-col class="news_item_title grey--text text--darken-2" :span="24" > webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。</el-col>
+                        </el-row>
+                      </el-col>
+
+                    </template>
+                    <el-col :xs="24" class="py-3 text-xs-center">
+                      <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                    </el-col>
+                  </el-row>
+
+                </el-col>
+
+              </el-col>
+            </v-tab-item>
+          </v-tabs>
+        </v-flex>
+
+        <v-flex xs12 class="mt-3">
+          <v-tabs
+            color="white"
+            slider-color="red"
+            centered
+            grow
+          >
+            <v-tab
+              v-ripple="{ class: `red--text` }"
+              v-for="(header, index) in tabs.headers"
+              :key="index"
+            >
+              {{header}}
+            </v-tab>
+
+            <v-tab-item
+              v-for="item in tabs.items"
+              :key="index"
+              style="min-height: 400px;"
+            >
+              <el-col :span="24" class="white">
+                <el-row  type="flex" justify="start"  style="flex-wrap:wrap;border: 1px solid #eee">
+                  <el-col :span="8" v-for="i in 15" class="m_brand_block" >
+                    <a href="#">
+                      <img src="../../assets/imgs/jclogo.jpg" width="100%" height="100%">
+                    </a>
+                  </el-col>
+                  <el-col :xs="24" class="py-3 text-xs-center">
+                    <v-btn outline color="grey" small>更 多&nbsp;&nbsp; +</v-btn>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </v-tab-item>
+
+          </v-tabs>
+        </v-flex>
+
+
+      </v-layout>
+
+
+
+
+    </v-flex>
+    <!--手机端-->
 
 
   </v-layout><!-- content layout -->
@@ -738,5 +1181,24 @@
   .news_item_date{
     text-align: right;
 
+  }
+  .tab_header_item{
+    color: #666;
+    font-size: 16px;
+  }
+  .brand_block{
+    border: 1px solid #eee;
+    width: 20%;
+    height:120px
+  }
+  .brand_block:active{
+    border: 4px solid #eee;
+  }
+  .m_brand_block{
+    border: 1px solid #eee;
+
+  }
+  .m_brand_block:active{
+    border: 4px solid #eee;
   }
 </style>

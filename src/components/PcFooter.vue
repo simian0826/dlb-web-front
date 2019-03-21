@@ -102,7 +102,7 @@
               </v-layout>
             </v-flex>
             <v-flex sm4 >
-              <div class="footer_center_item_title">服务与支持</div><br>
+              <div class="footer_center_item_title">服务与支持</div>
               <div class="footer_center_item">服务热线：17316789980</div><br>
               <div class="footer_center_item">服务时间：9:00-18:00</div><br>
               <div class="footer_center_item">服务邮箱：59455428@qq.com</div><br>
