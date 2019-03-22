@@ -2,6 +2,9 @@ import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 export default {
   name: "Home",
+  props:{
+    fromParent:String,
+  },
   data () {
     return {
       items: [
@@ -382,7 +385,8 @@ export default {
         type : 'bullets',
 
       },
-    })
+    });
+    console.log();
   }
 };
 

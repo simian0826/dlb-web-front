@@ -18,6 +18,8 @@ import {
   Button,
   Row,
   Col,
+  Breadcrumb,
+  BreadcrumbItem,
 } from 'element-ui';
 import {RESOURCE_UOLOAD_API} from "./api/url-constants";
 
@@ -28,7 +30,8 @@ Vue.use(Input);
 Vue.use(Row);
 Vue.use(Col);
 Vue.use(Icon);
-
+Vue.use(Breadcrumb);
+Vue.use(BreadcrumbItem);
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 Vue.use(Vuex);

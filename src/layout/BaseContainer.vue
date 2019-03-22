@@ -19,15 +19,17 @@
   import MFooterBar from "../components/MFooterBar";
   export default {
     components: { MFooterBar, PcFooter, Header, PcTopToolBar },
+    data(){
+      return{
+
+      }
+    },
     mounted(){
-      console.log(this.$vuetify.breakpoint.smOnly);
     }
   };
 
 </script>
 
 <style scoped>
-  .grid-cell{
-    height:60px
-  }
+
 </style>

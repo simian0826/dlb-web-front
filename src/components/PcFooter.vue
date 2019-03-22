@@ -135,7 +135,7 @@
 
 <script>
   export default {
-    name: "PcFooter"
+    name: "PcFooter",
   };
 </script>
 
